@@ -1,0 +1,187 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Estilo da introdução */
+#introduction {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    line-height: 1.5;
+    width: 90%;
+    max-width: 600px;
+}
+
+#introduction ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+#introduction ul li {
+    margin-bottom: 5px;
+}
+
+/* Estilos das torres */
+.towers {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 700px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.tower {
+    width: 120px; /* Tamanho ajustável */
+    height: 300px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+    margin: 0 10px;
+}
+
+/* Estilos dos discos */
+.disk {
+    height: 20px;
+    border-radius: 3px;
+    margin: 2px 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    width: 90%; /* Ajuste automático baseado na torre */
+    max-width: calc(100% - 10px); /* Garantia de que respeitará o tamanho */
+}
+
+.disk.selected {
+    border: 2px solid red;
+}
+
+/* Estilo do contador de movimentos e mensagens */
+#message {
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+    height: 20px; /* Garante um espaço fixo, mesmo sem mensagens */
+}
+
+#moves {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Botão reiniciar */
+button#reset {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button#reset:hover {
+    background-color: #45a049;
+}
+
+/* RESPONSIVIDADE */
+
+/* Ajustes para telas médias (Tablets, largura < 768px) */
+@media (max-width: 768px) {
+    #introduction {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .tower {
+        width: 100px;
+        height: 250px;
+    }
+
+    .disk {
+        height: 18px;
+        font-size: 14px;
+        width: 85%; /* Redução proporcional */
+    }
+
+    #moves {
+        font-size: 16px;
+    }
+
+    button#reset {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+/* Ajustes para telas pequenas (Celulares, largura < 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #introduction {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .towers {
+        flex-wrap: nowrap;
+        overflow-x: scroll; /* Permite rolagem horizontal se necessário */
+    }
+
+    .tower {
+        width: 90px; /* Torres menores para caber na tela */
+        height: 180px; /* Altura reduzida */
+        margin: 5px;
+    }
+
+    .disk {
+        height: 14px;
+        font-size: 12px;
+        width: 80%; /* Ajuste automático */
+        max-width: calc(100% - 5px); /* Garante que respeitará o limite */
+    }
+
+    #moves {
+        font-size: 14px;
+    }
+
+    button#reset {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
